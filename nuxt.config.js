@@ -1,4 +1,5 @@
 const resolve = require('path').resolve
+const ExtractTextPlugin = require('extract-text-webpack-plugin')
 
 module.exports = {
   /*
@@ -44,6 +45,14 @@ module.exports = {
    */
   build: {
     extractCSS: true,
+    plugins: [
+      new ExtractTextPlugin({
+        filename: (getPath) => {
+          return getPath('css/[name].css').replace('css/js', 'css')
+        },
+        allChunks: true
+      })
+    ],
     vendor: ['axios', 'mint-ui', 'qs'],
     babel: {
       'presets': [

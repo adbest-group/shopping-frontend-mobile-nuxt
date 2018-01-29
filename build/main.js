@@ -65,14 +65,15 @@ module.exports =
 /******/ 	__webpack_require__.p = "/";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 6);
+/******/ 	return __webpack_require__(__webpack_require__.s = 7);
 /******/ })
 /************************************************************************/
 /******/ ([
 /* 0 */
 /***/ function(module, exports, __webpack_require__) {
 
-/* WEBPACK VAR INJECTION */(function(__dirname) {var resolve = __webpack_require__(4).resolve;
+/* WEBPACK VAR INJECTION */(function(__dirname) {var resolve = __webpack_require__(5).resolve;
+var ExtractTextPlugin = __webpack_require__(4);
 
 module.exports = {
   /*
@@ -108,6 +109,12 @@ module.exports = {
    */
   build: {
     extractCSS: true,
+    plugins: [new ExtractTextPlugin({
+      filename: function filename(getPath) {
+        return getPath('css/[name].css').replace('css/js', 'css');
+      },
+      allChunks: true
+    })],
     vendor: ['axios', 'mint-ui', 'qs'],
     babel: {
       'presets': [['env', {
@@ -173,7 +180,7 @@ module.exports = {
 /* 1 */
 /***/ function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(5);
+module.exports = __webpack_require__(6);
 
 
 /***/ },
@@ -192,16 +199,22 @@ module.exports = require("nuxt");
 /* 4 */
 /***/ function(module, exports) {
 
-module.exports = require("path");
+module.exports = require("extract-text-webpack-plugin");
 
 /***/ },
 /* 5 */
 /***/ function(module, exports) {
 
-module.exports = require("regenerator-runtime");
+module.exports = require("path");
 
 /***/ },
 /* 6 */
+/***/ function(module, exports) {
+
+module.exports = require("regenerator-runtime");
+
+/***/ },
+/* 7 */
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";

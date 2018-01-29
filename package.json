@@ -16,7 +16,6 @@
     "cross-env": "^5.0.1",
     "koa": "^2.4.1",
     "mint-ui": "^2.2.13",
-    "node-sass": "^4.5.3",
     "nprogress": "^0.2.0",
     "qs": "^6.5.1",
     "sass-loader": "^6.0.6",
@@ -29,17 +28,22 @@
     "babel-eslint": "^7.1.1",
     "backpack-core": "^0.3.0",
     "eslint": "^3.13.1",
-    "eslint-loader": "^1.9.0",
     "eslint-config-standard": "^10.2.1",
+    "eslint-loader": "^1.9.0",
     "eslint-plugin-html": "^2.0.3",
     "eslint-plugin-import": "^2.2.0",
     "eslint-plugin-node": "^4.2.2",
     "eslint-plugin-promise": "^3.4.0",
     "eslint-plugin-standard": "^3.0.1",
+    "node-sass": "^4.7.2",
+    "nodemon": "^1.11.0",
+    "scmp": "^2.0.0",
     "vue-scrollto": "^2.8.0",
     "vue-style-loader": "^3.0.1",
-    "vue-svg-icon": "^1.2.9",
-    "nodemon": "^1.11.0",
-    "scmp": "^2.0.0"
+    "vue-svg-icon": "^1.2.9"
+  },
+  "engines": {
+    "node": ">=8.0.0",
+    "npm": ">=5.0.0"
   }
 }
