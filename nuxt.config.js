@@ -53,7 +53,11 @@ module.exports = {
         allChunks: true
       })
     ],
-    vendor: ['axios', 'mint-ui', 'qs'],
+    vendor: [
+      'axios',
+      'mint-ui',
+      'qs'
+    ],
     babel: {
       'presets': [
         ['env', {
