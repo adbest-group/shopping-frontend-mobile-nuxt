@@ -51,12 +51,12 @@ module.exports = {
       })
     ],
     vendor: [
+      './utils/Global.js',
+      './utils/utils.js',
+      './utils/fetch.js',
       'axios',
       'mint-ui',
-      'qs',
-      './utils/fetch.js',
-      './utils/Global.js',
-      './utils/utils.js'
+      'qs'
     ],
     babel: {
       'presets': [

@@ -114,7 +114,7 @@ module.exports = {
       },
       allChunks: true
     })],
-    vendor: ['axios', 'mint-ui', 'qs', './utils/fetch.js', './utils/Global.js', './utils/utils.js'],
+    vendor: ['./utils/Global.js', './utils/utils.js', './utils/fetch.js', 'axios', 'mint-ui', 'qs'],
     babel: {
       'presets': [['env', {
         'modules': false,
