@@ -1,5 +1,6 @@
 import Vue from 'vue'
 import global_ from '../utils/Global.js'
+import '../utils/rem.js'
 
 Vue.config.productionTip = false
 

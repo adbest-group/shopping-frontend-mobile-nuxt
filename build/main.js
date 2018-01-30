@@ -82,8 +82,7 @@ module.exports = {
   head: {
     title: 'starter',
     meta: [{ charset: 'utf-8' }, { name: 'viewport', content: 'width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' }, { hid: 'description', name: 'description', content: 'Nuxt.js project' }],
-    link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
-    script: [{ src: '/rem.js' }]
+    link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }]
   },
   /*
   ** Global CSS
@@ -115,7 +114,7 @@ module.exports = {
       },
       allChunks: true
     })],
-    vendor: ['axios', 'mint-ui', 'qs'],
+    vendor: ['axios', 'mint-ui', 'qs', './utils/fetch.js', './utils/Global.js', './utils/utils.js'],
     babel: {
       'presets': [['env', {
         'modules': false,

@@ -26,40 +26,29 @@
   </div>
 </template>
 <script>
-  import * as api from '../store/api'
-  import * as types from '../store/mutation-types'
   import MyHeader from '../components/MyHeader.vue'
   import GoodsList from '../components/GoodsList.vue'
   import TopSearch from '../components/TopSearch.vue'
-  
   import { Loadmore } from 'mint-ui'
   import { mapActions, mapState, mapGetters } from 'vuex'
   import { autoFetchTime, criticalNotifyNum, baseTitle } from '../utils/Global'
+  import { fetchGoodsList, fetchSearchList } from '../utils/fetch'
 
-  export default{
+  export default {
     name: 'index',
     head() {
       return {
         title: this.title
       }
     },
-    fetch({store, query}) {
+    async fetch({store, query}) {
       this.isListLoading = true
       if (query.key) {
-        return api.fetchSearchList(query).then(({data}) => {
-          if (data.code === 0) {
-            store.commit(types.GET_GOODS_LIST, data.result)
-            this.isListLoading = false
-          }
-        })
+        await fetchSearchList({store, query})
+        this.isListLoading = false
       } else {
-        return api.fetchGoodsList(query).then(({data}) => {
-          if (data.code === 0) {
-            store.commit(types.GET_GOODS_LIST, data.result)
-            store.commit(types.GET_MAX_ID_SYNC, data.result)
-            this.isListLoading = false
-          }
-        })
+        await fetchGoodsList({store, query})
+        this.isListLoading = false
       }
     },
     components: {

@@ -12,21 +12,18 @@
   </div>
 </template>
 <script>
-  import * as api from '../store/api'
-  import * as types from '../store/mutation-types'
   import { Loadmore } from 'mint-ui'
   import { mapActions, mapState } from 'vuex'
   import {baseTitle} from '../utils/Global'
   import TopSearch from '../components/TopSearch.vue'
   import MyHeader from '../components/MyHeader.vue'
   import CouponsItems from '../components/CouponsItems.vue'
+  import { fetchCoupons } from '../utils/fetch'
 
-  export default{
+  export default {
     name: 'detail',
-    fetch({store}) {
-      return api.fetchCoupons().then(({data}) => {
-        if (data.code === 0) store.commit(types.GET_COUPONS, data.result.list)
-      })
+    async fetch({store}) {
+      await fetchCoupons({store})
     },
     data: () => ({
       title: 'Coupons | ' + baseTitle

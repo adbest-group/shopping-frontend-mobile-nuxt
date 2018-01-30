@@ -14,9 +14,6 @@ module.exports = {
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
-    ],
-    script: [
-      { src: '/rem.js' }
     ]
   },
   /*
@@ -56,7 +53,10 @@ module.exports = {
     vendor: [
       'axios',
       'mint-ui',
-      'qs'
+      'qs',
+      './utils/fetch.js',
+      './utils/Global.js',
+      './utils/utils.js'
     ],
     babel: {
       'presets': [
