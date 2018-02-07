@@ -1,16 +1,15 @@
 const resolve = require('path').resolve
-const ExtractTextPlugin = require('extract-text-webpack-plugin')
 
 module.exports = {
   /*
   ** Headers of the page
   */
   head: {
-    title: 'starter',
+    title: 'DealsWill Online Shopping Promotions - The Latest Coupons & Promo Codes - DealsWill.com',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' },
-      { hid: 'description', name: 'description', content: 'Nuxt.js project' }
+      { hid: 'description', name: 'description', content: 'DealsWill Online Shopping Promotions - The Latest Coupons & Promo Codes - DealsWill.com' }
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
@@ -21,8 +20,6 @@ module.exports = {
   */
   css: [
     'vue2-toast/lib/toast.css',
-    'mint-ui/lib/style.css',
-
         // 项目中的 Sass 文件
     { src: '~assets/css/base.scss', lang: 'scss' }, // 指定 scss 而非 sass
     { src: '~assets/css/common.scss', lang: 'scss' } // 指定 scss 而非 sass
@@ -42,39 +39,20 @@ module.exports = {
    */
   build: {
     extractCSS: true,
-    plugins: [
-      new ExtractTextPlugin({
-        filename: (getPath) => {
-          return getPath('css/[name].css').replace('css/js', 'css')
-        },
-        allChunks: true
-      })
-    ],
     vendor: [
       './utils/Global.js',
       './utils/utils.js',
       './utils/fetch.js',
       'axios',
-      'mint-ui',
       'qs'
     ],
     babel: {
-      'presets': [
-        ['env', {
-          'modules': false,
-          'targets': {
-            'browsers': ['> 1%', 'last 2 versions', 'not ie <= 8']
-          }
-        }],
-        'stage-2'
-      ],
-      'plugins': ['transform-runtime'],
-      'env': {
-        'test': {
-          'presets': ['env', 'stage-2'],
-          'plugins': ['istanbul']
+      'plugins': [['component', [
+        {
+          'libraryName': 'mint-ui',
+          'style': true
         }
-      }
+      ]]]
     },
     /*
      ** Run ESLINT on save

@@ -29,7 +29,6 @@
   import MyHeader from '../components/MyHeader.vue'
   import GoodsList from '../components/GoodsList.vue'
   import TopSearch from '../components/TopSearch.vue'
-  import { Loadmore } from 'mint-ui'
   import { mapActions, mapState, mapGetters } from 'vuex'
   import { autoFetchTime, criticalNotifyNum, baseTitle } from '../utils/Global'
   import { fetchGoodsList, fetchSearchList } from '../utils/fetch'
@@ -54,8 +53,7 @@
     components: {
       MyHeader,
       TopSearch,
-      GoodsList,
-      Loadmore
+      GoodsList
     },
     data() {
       return {

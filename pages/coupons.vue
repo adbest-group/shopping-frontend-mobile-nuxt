@@ -12,7 +12,6 @@
   </div>
 </template>
 <script>
-  import { Loadmore } from 'mint-ui'
   import { mapActions, mapState } from 'vuex'
   import {baseTitle} from '../utils/Global'
   import TopSearch from '../components/TopSearch.vue'
@@ -30,7 +29,6 @@
     }),
     components: {
       TopSearch,
-      Loadmore,
       MyHeader,
       CouponsItems
     },

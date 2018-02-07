@@ -13,6 +13,6 @@
 
 <style>
   img[lazy=loading] {
-    background-color: #999;
+    background-color: #ddd;
   }
 </style>

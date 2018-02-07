@@ -108,7 +108,6 @@ import NoList from './NoList.vue'
 import upvote from '../components/Upvote.vue'
 import { changeTime, dealDomain, ignoreLink, getOff } from '../utils/utils'
 import { mapActions, mapState, mapGetters } from 'vuex'
-import { Spinner } from 'mint-ui'
 import qs from 'qs'
 export default {
   props: {
@@ -202,8 +201,7 @@ export default {
   },
   components: {
     NoList,
-    upvote,
-    Spinner
+    upvote
   }
 }
 </script>
